@@ -4,47 +4,126 @@
   <meta charset="UTF-8" />
   <title>Domain For Sale</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link href="https://fonts.googleapis.com/css2?family=Carlito:wght@400;700&display=swap" rel="stylesheet" />
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: #050816;
-      color: #f9fafb;
+      font-family: 'Carlito', 'Calibri', Arial, sans-serif;
+      background: #ffffff;
+      color: #111111;
       min-height: 100vh;
       display: flex;
       align-items: center;
       justify-content: center;
-    }
-    main {
-      text-align: center;
       padding: 2rem;
-      border-radius: 0.75rem;
-      background: radial-gradient(circle at top, #111827, #020617);
-      box-shadow: 0 20px 40px rgba(0,0,0,0.5);
-      max-width: 480px;
+    }
+    .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 4rem;
+      max-width: 960px;
       width: 100%;
     }
-    h1 {
-      font-size: clamp(1.8rem, 3vw, 2.4rem);
+    .left {
+      flex: 1;
+    }
+    .left h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      line-height: 1.2;
+      color: #111111;
+    }
+    .divider {
+      width: 1px;
+      height: 300px;
+      background: #dddddd;
+    }
+    .right {
+      flex: 1;
+    }
+    .right h2 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+      color: #111111;
+    }
+    .form-group {
       margin-bottom: 1rem;
     }
-    p {
+    .form-group label {
+      display: block;
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin-bottom: 0.4rem;
+      color: #333333;
+    }
+    .form-group label .optional {
+      font-weight: 400;
+      color: #888888;
+      font-size: 0.8rem;
+    }
+    .form-group input {
+      width: 100%;
+      padding: 0.6rem 0.8rem;
+      border: 1px solid #cccccc;
+      border-radius: 4px;
       font-size: 1rem;
-      color: #d1d5db;
-      margin-bottom: 1.5rem;
+      font-family: inherit;
+      color: #111111;
+      outline: none;
     }
-    a {
-      color: #38bdf8;
-      text-decoration: none;
-      font-weight: 500;
+    .form-group input:focus {
+      border-color: #555555;
     }
-    a:hover { text-decoration: underline; }
+    .btn {
+      background: #111111;
+      color: #ffffff;
+      border: none;
+      padding: 0.7rem 1.8rem;
+      font-size: 1rem;
+      font-family: inherit;
+      font-weight: 600;
+      border-radius: 4px;
+      cursor: pointer;
+      margin-top: 0.5rem;
+    }
+    .btn:hover {
+      background: #333333;
+    }
+    @media (max-width: 700px) {
+      .container { flex-direction: column; gap: 2rem; }
+      .divider { width: 100%; height: 1px; }
+    }
   </style>
 </head>
 <body>
-  <main>
-    <h1>This domain is up for sale</h1>
-    <p>To purchase, contact <a href="mailto:vishalshrivastav0@gmail.com">vishalshrivastav0@gmail.com</a></p>
-  </main>
+  <div class="container">
+    <div class="left">
+      <h1>This domain is up for sale.</h1>
+    </div>
+    <div class="divider"></div>
+    <div class="right">
+      <h2>Contact with offer!</h2>
+      <form action="https://formsubmit.co/vishalshrivastav0@gmail.com" method="POST">
+        <input type="hidden" name="_subject" value="Domain Purchase Inquiry" />
+        <input type="hidden" name="_captcha" value="false" />
+        <input type="hidden" name="_next" value="https://llmwala.com/?sent=1" />
+        <div class="form-group">
+          <label for="fullName">Full Name</label>
+          <input type="text" id="fullName" name="fullName" placeholder="John Doe" required />
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="john@example.com" required />
+        </div>
+        <div class="form-group">
+          <label for="phone">Phone Number <span class="optional">(optional)</span></label>
+          <input type="tel" id="phone" name="phone" placeholder="+1 234 567 8900" />
+        </div>
+        <button type="submit" class="btn">Send Request</button>
+      </form>
+    </div>
+  </div>
 </body>
 </html>
